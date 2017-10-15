@@ -1,7 +1,7 @@
 {
   "name": "yaml_glob_loader",
   "version": "0.1.0",
-  "description": "Import glob patters of Yaml files. ",
+  "description": "Import glob patterns of Yaml files. ",
   "main": "index.js",
   "scripts": {},
   "author": "James Nettik <james.nettik@gmail.com>",
