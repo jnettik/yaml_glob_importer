@@ -6,22 +6,19 @@
 
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob-fs')({ gitignore: true });
+const glob = require('glob');
 const yaml = require('js-yaml');
 
 module.exports = function (pattern) {
   const data = {};
 
-  glob.readdirSync(pattern, (err, files) => {
-    files.forEach((file) => {
-      const fileName = path.basename(file);
-      const fileContents = fs.readFileSync(`${__dirname}/${fileName}`, 'utf8');
-      const config = yaml.safeLoad(fileContents);
-      const json = JSON.stringify(config, null, 4);
+  glob.sync(pattern).forEach((file) => {
+    const absPath = path.resolve(file);
+    const fileData = fs.readFileSync(absPath, 'utf8');
+    const config = yaml.safeLoad(fileData);
 
-      // Export module of config keyed by file name.
-      data[path.basename(file, '.js')] = json;
-    });
+    // Export module of config keyed by file name.
+    data[path.basename(file, '.js')] = config;
   });
 
   return data;

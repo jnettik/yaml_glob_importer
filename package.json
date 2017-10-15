@@ -7,7 +7,7 @@
   "author": "James Nettik <james.nettik@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "glob-fs": "^0.1.7",
+    "glob": "^7.1.2",
     "js-yaml": "^3.10.0"
   },
   "devDependencies": {
