@@ -18,7 +18,7 @@ module.exports = function (pattern) {
     const config = yaml.safeLoad(fileData);
 
     // Export module of config keyed by file name.
-    data[path.basename(file, '.js')] = config;
+    data[path.basename(file, '.yml')] = config;
   });
 
   return data;

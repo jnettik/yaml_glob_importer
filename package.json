@@ -1,6 +1,6 @@
 {
   "name": "yaml_glob_loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Import glob patterns of Yaml files.",
   "main": "index.js",
   "scripts": {},
